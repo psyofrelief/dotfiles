@@ -1,0 +1,27 @@
+Adobe Illustrator 2023
+Adobe Photoshop 2025
+AeroSpace.app
+AutoRaise.app
+ChatGPT.app
+CrystalFetch.app
+DYMO Connect Support Tool.app
+DYMO Connect.app
+DYMO.WebApi.Mac.Host.app
+Figma.app
+Firefox.app
+Google Chrome.app
+iTerm.app
+Karabiner-Elements.app
+Karabiner-EventViewer.app
+kitty.app
+KnockKnock.app
+LuLu.app
+Malwarebytes.app
+qBittorrent.app
+Raycast.app
+Safari.app
+Sequel Ace.app
+Spotify.app
+Sublime Text.app
+Utilities
+UTM.app

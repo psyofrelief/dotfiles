@@ -1,0 +1,26 @@
+{
+  "backup_path": "~/shallow-backup",
+  "dotfiles": {
+    ".bash_profile": {
+      "backup_condition": "",
+      "reinstall_condition": ""
+    },
+    ".config/shallow-backup.json": {},
+    ".config/aerospace": {},
+    ".config/kitty": {},
+    ".config/sketchybar": {},
+    ".config/iterm2": {},
+    ".zshrc": {}
+  },
+  "root-gitignore": ["dotfiles/.ssh", "dotfiles/.pypirc", ".DS_Store"],
+  "dotfiles-gitignore": [".ssh", ".pypirc", ".DS_Store"],
+  "config_mapping": {
+    "/Users/fdog/Library/Application Support/Sublime Text 3": "sublime3",
+    "/Users/fdog/Library/Application Support/Sublime Text 4": "sublime4",
+    "/Users/fdog/Library/Application Support/Code/User/settings.json": "vscode/settings",
+    "/Users/fdog/Library/Application Support/Code/User/Snippets": "vscode/Snippets",
+    "/Users/fdog/Library/Application Support/Code/User/keybindings.json": "vscode/keybindings",
+    "/Users/fdog/Library/Preferences/com.apple.Terminal.plist": "terminal_plist"
+  },
+  "lowest_supported_version": "6.4"
+}

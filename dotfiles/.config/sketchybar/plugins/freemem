@@ -1,0 +1,28 @@
+#!/bin/bash
+
+NAME=${NAME:-freemem}
+COMMAND="vm_stat"
+INTERVAL=5
+
+# Get total system RAM in bytes
+PAGES=$(sysctl vm.pages | awk '{ print $2 }')
+SIZE=$(sysctl vm.pagesize | awk '{ print $2 }')
+RAM_BYTES=$((PAGES * SIZE))
+
+case "${SENDER}" in
+  "forced")
+    # Kill any previous instance of vm_stat to avoid duplicates
+    pkill -QUIT -f "${COMMAND}" >/dev/null 2>&1
+
+    ${COMMAND} "${INTERVAL}" \
+      | grep --line-buffered '^ *[0-9]' \
+      | while read -r -a STATS; do
+          FREE_PAGES=$((STATS[0] + STATS[3] + STATS[6]))
+          FREE_BYTES=$((FREE_PAGES * SIZE))
+          USED_BYTES=$((RAM_BYTES - FREE_BYTES))
+          USED_GB=$(echo "scale=1; $USED_BYTES / 1073741824" | bc)
+
+          sketchybar --set "${NAME}" label="RAM — ${USED_GB}GB"
+        done
+    ;;
+esac
